@@ -15,8 +15,8 @@ const SignUpForm = () => {
   const {toast} = useToast()
   const navigate = useNavigate()
   const {checkAuthUser, isLoading: isUserLoading}= useUserContext()
-  const {mutateAsync: createUserAccount, isLoading: isCreatingUser } = userCreateUserAccount();
-  const {mutateAsync:signInAccount, isLoading:isSigningUser} = userSignInAccount()
+  const {mutateAsync: createUserAccount, isPending: isCreatingAccount } = userCreateUserAccount();
+  const {mutateAsync:signInAccount, isPending:isSigningUser} = userSignInAccount()
   const form = useForm<z.infer<typeof signUpValidation>>({
     resolver: zodResolver(signUpValidation),
     defaultValues: {
@@ -124,7 +124,7 @@ const SignUpForm = () => {
         type="submit"
         className="bg-violet-900 text-white"
         >
-          {isCreatingUser ? (
+          {isCreatingAccount ? (
             <div className="flex-center gap-2">
               <Loader/> Loading...
             </div>
