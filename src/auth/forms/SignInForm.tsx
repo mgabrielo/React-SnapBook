@@ -48,7 +48,10 @@ const SignInForm = () => {
       <Form {...form}>
         <div className="sm:w-420 flex-center flex-col">
           {/* <img src='/assets/images/logo.svg' alt="logo"/> */}
-          <h1 className="h2-bold md:h1-bold pt-5 sm:pt-12 text-purple-700">SnapBook</h1>
+          <div style={{ display:'flex', alignItems:'center',gap:8}}>
+                <img src="/assets/images/logo2.png" style={{height:'30px', width:'100%', position:'relative', objectFit:'cover',}} />
+                <h1 className="h2-bold md:h1-bold text-purple-700">SnapBook</h1>
+          </div>
           <h2 className="h4-bold md:h3-bold pt-5 sm:pt-12">Log Into Your Account</h2>
           <p className="text-light-3 small-medium md:base-regular mt-2">Welcome Please Enter Your Details</p>
       
